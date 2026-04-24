@@ -2,7 +2,7 @@
 
 > **Jméno a příjmení:** `Petr Hloušek`
 
-> **Název projektu:** `Pronájem služeb - servery`
+> **Název projektu:** `Pronájem služeb - hosting`
 
 ---
 
@@ -10,7 +10,7 @@
 
 _Krátce popište svůj projekt – čemu se věnuje, co nabízí a jaký problém řeší?_
 
-``
+`Vytvoření moderní platformy pro pronájem či prodej herních, webových, cloudových, či komunikačních serverů. Zaměřeno na jednoduchost, nabízí levnější řešení pro koncového zákazníka, výkon. jednoduchou správu a moderní uživatelské rozhraní. `
 
 ---
 
@@ -28,7 +28,7 @@ _Uveďte konkurenční projekty. Co se vám na nich líbí, co ne? V čem se mů
 
 _Kdo je váš cílový uživatel / zákazník? Popište typického zástupce cílové skupiny._
 
-``
+`Primárně zaměřeno na mladé, technicky zdatné uživatele ve věku přibližně 15-30 let, kteří vytváří málé projekty, ale zároveň hledají levné řešení, kde tyto projekty hostovat, případně lidé, kteří si chtějí zaplatit levný herní server s plnou automatizací instalace, při které uživatel nemusí provádět žádné operace. Dále zaměřeno na menší firmy a startupy, které taktéž hledají levné řešení v těžších dobách, a aktuálně nemohou vlastnit svůj vlastní server. `
 
 
 ## Odkazy a výstupy
