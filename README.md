@@ -38,8 +38,8 @@ _Shrnutí všech odkazů na jednom místě. Průběžně aktualizujte._
 | Výstup | Odkaz |
 |---|---|
 | GitHub Pages (live) | [`Zde`](https://pslib-cz.github.io/2025-p2a-web-volny-projekt-PetrHIousek/) |
-| Grafický manuál (Figma / Canva) | [`Zde`](https://www.figma.com/design/JnkPnSJJ3cVvfHHyhwAARi/WEB-Graficky-Manual?t=P3ebPbJ7a5k0dHpP-1) |
-| Grafický návrh webu (Figma) | [`Zde`](https://www.figma.com/design/ej7PbHgCWcT8YAOe3p3WkJ/WEB-Voln%C3%BD-projekt?node-id=0-1&t=P3ebPbJ7a5k0dHpP-1) |
+| Grafický manuál (Figma / Canva) | [`Zde`](https://www.figma.com/design/MKc1yWK6d9d5LtdtzK82oq/Hlou%C5%A1ekPetr?t=u0YH1pbJhph0CBpQ-1) |
+| Grafický návrh webu (Figma) | [`Zde`](https://www.figma.com/design/MKc1yWK6d9d5LtdtzK82oq/Hlou%C5%A1ekPetr?t=u0YH1pbJhph0CBpQ-1) |
 | Fotografie / média | [`Doplň odkaz`](#) |
 
 ---
