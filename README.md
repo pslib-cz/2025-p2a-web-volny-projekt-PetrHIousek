@@ -10,7 +10,7 @@
 
 _Krátce popište svůj projekt – čemu se věnuje, co nabízí a jaký problém řeší?_
 
-`Vytvoření moderní platformy pro pronájem či prodej herních, webových, cloudových, či komunikačních serverů. Zaměřeno na jednoduchost, nabízí levnější řešení pro koncového zákazníka, výkon. jednoduchou správu a moderní uživatelské rozhraní. `
+`Platforma pro jednoduché nasazení herních a webových serverů během několika minut bez nutnosti technických znalostí. Oproti běžným hostingům nabízí plně automatizovanou instalaci, přehledné webové rozhraní a optimalizovaný výkon za nižší cenu.`
 
 ---
 
