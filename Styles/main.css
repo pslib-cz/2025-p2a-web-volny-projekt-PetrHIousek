@@ -1,0 +1,19 @@
+:root {
+  --green: #02ae69;
+  --green-dark: #007949;
+
+  --black: #000000;
+  --gray: #535353;
+  --gray-light: #b3b3b3;
+  --white-ish: #d9d9d9;
+  --cart-white: #f7f7f7;
+  --white: #ffffff;
+
+  --selected-green-from: #20bf11;
+  --selected-green-to: #6cff82;
+  --selected-green: linear-gradient(
+    180deg,
+    var(--selected-green-from) 0%,
+    var(--selected-green-to) 60%
+  );
+}

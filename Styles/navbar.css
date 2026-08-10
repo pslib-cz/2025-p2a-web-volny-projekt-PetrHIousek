@@ -1,0 +1,234 @@
+.navbar {
+  display: flex;
+  min-height: 60px;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  margin-left: 20px;
+}
+
+.logo__image {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.rightsidebuttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-shrink: 0;
+  align-self: stretch;
+  gap: 20px;
+  margin-right: 20px;
+}
+
+.tlacudlo {
+  display: flex;
+  padding: 0.625rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.tlacudlo img {
+  display: block; /* tlačítka se odsazovala, protože v defaultu display: inline*/
+}
+
+.supportlink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  padding: 0;
+  width: 100px;
+  background: var(--gray-light);
+  color: var(--black);
+  text-decoration: none;
+}
+
+.menu .menu__icon--open {
+  display: block;
+}
+.menu .menu__icon--close {
+  display: none;
+}
+
+.navigation.menu-open .menu__icon--open {
+  display: none;
+}
+.navigation.menu-open .menu__icon--close {
+  display: block;
+}
+
+.menu__panel {
+  display: none;
+  margin: 0;
+  padding: 20px;
+  list-style: none;
+  border: 1px solid var(--black);
+  order: 1;
+  width: 100%;
+}
+
+.navigation.menu-open .menu__panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu__row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  color: var(--black);
+  text-decoration: none;
+}
+
+.menu__row img {
+  display: block;
+}
+
+.logo__text {
+  display: none;
+}
+
+.menu__item--pc {
+  display: none;
+}
+
+.menu__item--mobile {
+  order: -1; /* login/register bue nahoře */
+}
+
+.rentserver,
+.menu__toggle {
+  width: 25px;
+  height: 25px;
+  padding: 0;
+}
+
+.rentserver img,
+.menu__toggle img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.rentserver span {
+  display: none;
+}
+
+.login {
+  display: none;
+}
+
+/* pc breakpoint 1350px */
+
+@media (min-width: 1350px) {
+  .navbar {
+    min-height: 90px;
+    padding: 0;
+  }
+
+  .logo {
+    gap: 20px;
+    padding: 0 1.25rem;
+    margin-left: 0;
+  }
+  .logo__image {
+    width: 69px; /* dle figma designu */
+    height: 50px; /* dle figma designu */
+  }
+  .logo__text {
+    display: block;
+    width: 160px;
+    height: 18px;
+  }
+
+  .menu__panel,
+  .navigation.menu-open .menu__panel {
+    display: flex;
+    order: 0;
+    width: auto; /* ruší calc */
+    margin: 0; /* ruší záporný margin */
+    align-self: stretch;
+    gap: 20px;
+    padding: 0;
+    border: 0; /* aby byla celá plocha clickable */
+    flex-direction: row; /* delalo to picoviny, na 1350px se to zarovnavalo pod sebe */
+  }
+
+  .menu__item {
+    display: flex;
+    align-self: stretch;
+    width: 90px;
+  }
+  .menu__item--pc {
+    display: flex;
+  }
+  .menu__item--mobile {
+    display: none;
+  }
+  .menu__row img {
+    display: none;
+  }
+
+  .menu__row {
+    width: 100%;
+    align-self: stretch;
+    justify-content: center;
+  }
+
+  .tlacudlo {
+    width: 170px;
+    height: auto; /* ruší 25px */
+    align-self: stretch;
+    flex-direction: row;
+    padding: 0;
+    text-decoration: none;
+    color: var(--black);
+  }
+
+  .navbar__buttons {
+    order: 1;
+    gap: 0;
+    margin-right: 0;
+  }
+
+  .tlacudlo img {
+    display: none;
+  }
+
+  .rentserver {
+    order: -1;
+    background: var(--green);
+  }
+  .rentserver span {
+    display: block;
+  }
+  .supportlink {
+    width: 170px;
+    background: var(--gray-light);
+  }
+  .login {
+    display: flex;
+    background: var(--white-ish);
+  }
+  .menu {
+    display: none;
+  }
+}
