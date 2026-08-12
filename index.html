@@ -4,52 +4,62 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nexyros | Homepage</title>
-    <link rel="stylesheet" href="/Styles/normalize.css" />
-    <link rel="stylesheet" href="/Styles/main.css" />
-    <link rel="stylesheet" href="/Styles/navbar.css" />
+    <link rel="stylesheet" href="Styles/normalize.css" />
+    <link rel="stylesheet" href="Styles/main.css" />
+    <link rel="stylesheet" href="Styles/navbar.css" />
 
     <script src="/Script/navbar.js" defer></script>
   </head>
   <body>
     <nav class="navigation">
       <div class="navbar">
-        <a class="logo" href="/index.html">
+        <a class="logo" href="index.html">
           <img
-            src="/Assets/Images/mobile_logo.png"
+            src="Assets/Images/mobile_logo.png"
             alt="Logo Nexyros"
             class="logo__image"
           />
           <img
-            src="/Assets/Images/logo_text.png"
+            src="Assets/Images/logo_text.png"
             alt="Nexyros"
             class="logo__text"
           />
         </a>
         <div class="navbar__buttons">
-          <a href="/contactsform.html" class="supportlink tlacudlo"
-            ><span>Support</span>
+          <a
+            href="contactsform.html"
+            class="navbar__button navbar__button--support"
+            ><span class="navbar__button-text">Support</span>
           </a>
 
-          <a href="/order.html" class="tlacudlo rentserver">
-            <img src="/Assets/Icons/plus.svg" alt="Add a server" />
-            <span>Rent a server</span>
+          <a href="order.html" class="navbar__button navbar__button--rent">
+            <img
+              class="navbar__button-icon"
+              src="Assets/Icons/plus.svg"
+              alt="Add a server"
+            />
+            <span class="navbar__button-text">Rent a server</span>
           </a>
 
-          <a href="#" class="tlacudlo login">
-            <img src="/Assets/Icons/login.svg" alt="Login" />
-            <span>Login / Register</span>
+          <a href="#" class="navbar__button navbar__button--login">
+            <img
+              class="navbar__button-icon"
+              src="Assets/Icons/login.svg"
+              alt="Login"
+            />
+            <span class="navbar__button-text">Login / Register</span>
           </a>
 
           <details class="menu">
-            <summary class="tlacudlo menu__toggle">
+            <summary class="navbar__button menu__toggle">
               <img
-                class="menu__icon--open"
-                src="/Assets/Icons/Hamburger-menu.svg"
+                class="menu__toggle-icon menu__toggle-icon--open"
+                src="Assets/Icons/Hamburger-menu.svg"
                 alt="Open menu"
               />
               <img
-                class="menu__icon--close"
-                src="/Assets/Icons/Hamburger-menu-open.svg"
+                class="menu__toggle-icon menu__toggle-icon--close"
+                src="Assets/Icons/Hamburger-menu-open.svg"
                 alt="Close menu"
               />
             </summary>
@@ -58,49 +68,45 @@
 
         <menu class="menu__panel">
           <li class="menu__item menu__item--pc">
-            <a class="menu__row" href="/index.html"><span>Home</span></a>
+            <a class="menu__row" href="index.html"><span>Home</span></a>
           </li>
 
           <li class="menu__item">
-            <a class="menu__row" href="/order.html">
-              <img src="/Assets/Icons/server.svg" alt="Rent a server" />
+            <a class="menu__row" href="order.html">
+              <img class="menu__icon" src="Assets/Icons/server.svg"/>
               <span>Servers</span>
             </a>
           </li>
 
           <li class="menu__item">
-            <a class="menu__row" href="/order.html">
-              <img src="/Assets/Icons/reviews.svg" alt="Reviews" />
+            <a class="menu__row" href="order.html">
+              <img class="menu__icon" src="Assets/Icons/reviews.svg"/>
               <span>Reviews</span>
             </a>
           </li>
 
           <li class="menu__item">
-            <a class="menu__row" href="/order.html">
-              <img src="/Assets/Icons/faq.svg" alt="FAQ" />
+            <a class="menu__row" href="order.html">
+              <img class="menu__icon" src="Assets/Icons/faq.svg"/>
               <span>FAQ</span>
             </a>
           </li>
 
           <li class="menu__item">
-            <a class="menu__row" href="/order.html">
-              <img src="/Assets/Icons/contacts.svg" alt="Contacts" />
+            <a class="menu__row" href="order.html">
+              <img class="menu__icon" src="Assets/Icons/contacts.svg"/>
               <span>Contacts</span>
             </a>
           </li>
 
           <li class="menu__item menu__item--mobile">
-            <a class="menu__row" href="/order.html">
-              <img src="/Assets/Icons/login.svg" alt="Login" />
+            <a class="menu__row" href="order.html">
+              <img class="menu__icon" src="Assets/Icons/login.svg"/>
               <span>Login / Register</span>
             </a>
           </li>
         </menu>
       </div>
     </nav>
-
-
-
-    
   </body>
 </html>
