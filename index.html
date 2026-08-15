@@ -4,11 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nexyros | Homepage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="Styles/normalize.css" />
     <link rel="stylesheet" href="Styles/main.css" />
     <link rel="stylesheet" href="Styles/navbar.css" />
+    <link rel="stylesheet" href="Styles/footer.css" />
 
-    <script src="/Script/navbar.js" defer></script>
+    <script src="Script/navbar.js" defer></script>
   </head>
   <body>
     <nav class="navigation">
@@ -73,40 +80,123 @@
 
           <li class="menu__item">
             <a class="menu__row" href="order.html">
-              <img class="menu__icon" src="Assets/Icons/server.svg"/>
+              <img class="menu__icon" src="Assets/Icons/server.svg" />
               <span>Servers</span>
             </a>
           </li>
 
           <li class="menu__item">
-            <a class="menu__row" href="order.html">
-              <img class="menu__icon" src="Assets/Icons/reviews.svg"/>
+            <a class="menu__row" href="index.html">
+              <img class="menu__icon" src="Assets/Icons/reviews.svg" />
               <span>Reviews</span>
             </a>
           </li>
 
           <li class="menu__item">
-            <a class="menu__row" href="order.html">
-              <img class="menu__icon" src="Assets/Icons/faq.svg"/>
+            <a class="menu__row" href="index.html">
+              <img class="menu__icon" src="Assets/Icons/faq.svg" />
               <span>FAQ</span>
             </a>
           </li>
 
           <li class="menu__item">
-            <a class="menu__row" href="order.html">
-              <img class="menu__icon" src="Assets/Icons/contacts.svg"/>
+            <a class="menu__row" href="contactsform.html">
+              <img class="menu__icon" src="Assets/Icons/contacts.svg" />
               <span>Contacts</span>
             </a>
           </li>
 
           <li class="menu__item menu__item--mobile">
-            <a class="menu__row" href="order.html">
-              <img class="menu__icon" src="Assets/Icons/login.svg"/>
+            <a class="menu__row" href="#">
+              <img class="menu__icon" src="Assets/Icons/login.svg" />
               <span>Login / Register</span>
             </a>
           </li>
         </menu>
       </div>
     </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="footer">
+      <div class="footer__columns">
+        <div class="footer__column">
+          <h2 class="footer__title">Company</h2>
+
+          <address class="footer__address">
+            <p class="footer__company">Nexyros s.r.o</p>
+            <p class="footer__text">Školní 1500</p>
+            <p class="footer__text">382 82 Benešov nad Cernou</p>
+            <p class="footer__text">IČO: 05368142</p>
+            <p class="footer__text">DIČ: CZ08426718</p>
+          </address>
+        </div>
+
+        <div class="footer__column">
+          <h2 class="footer__title">Contact</h2>
+
+          <ul class="footer__list">
+            <li class="footer__item">
+              <img class="footer__icon" src="Assets/Icons/mail.svg" />
+              <a class="footer__link" href="#">info@nexyros.eu</a>
+            </li>
+            <li class="footer__item">
+              <img class="footer__icon" src="Assets/Icons/phone.svg" />
+              <a class="footer__link" href="#">+420 722 689 341</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h2 class="footer__title">Socials</h2>
+
+          <ul class="footer__list">
+            <li class="footer__item">
+              <img class="footer__icon" src="Assets/Icons/discord.svg" />
+              <a class="footer__link" href="https://discord.gg/hS87nZ"
+                >Discord</a
+              >
+            </li>
+            <li class="footer__item">
+              <img class="footer__icon" src="Assets/Icons/instagram.svg" />
+              <a class="footer__link" href="https://instagram.com/nexyros.eu"
+                >Instagram</a
+              >
+            </li>
+            <li class="footer__item">
+              <img class="footer__icon" src="Assets/Icons/twitter.svg" />
+              <a class="footer__link" href="https://x.com/nexyros">X</a>
+            </li>
+            <li class="footer__item">
+              <img class="footer__icon" src="Assets/Icons/bluesky.svg" />
+              <a class="footer__link" href="https://bsky.app/profile/nexyros.eu"
+                >Bluesky</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">2026 Nexyros s.r.o.</p>
+
+        <nav class="footer__nav">
+          <a class="footer__link" href="index.html">Home</a>
+          <a class="footer__link" href="order.html">Rent a server</a>
+          <a class="footer__link" href="contactsform.html">Support</a>
+          <a class="footer__link" href="index.html#faq">FAQ</a>
+        </nav>
+      </div>
+    </footer>
   </body>
 </html>

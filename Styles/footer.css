@@ -1,10 +1,7 @@
-
-
-
-
 .footer {
   background: var(--gray);
   color: var(--white);
+  margin-top: auto; /* přidá margin takový, aby byl footer vždy na konci stránky*/
 }
 
 .footer__columns {

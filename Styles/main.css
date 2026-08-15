@@ -16,3 +16,12 @@
     var(--selected-green-to) 60%
   );
 }
+
+body {
+  font-family: "Inter";
+  min-height: 100vh; /* footer jinak jde nad stránku, protože na stránce není dostatek obsahu (specificky kontaktni formulář)*/
+  display: flex;
+  flex-direction: column;
+}
+
+
