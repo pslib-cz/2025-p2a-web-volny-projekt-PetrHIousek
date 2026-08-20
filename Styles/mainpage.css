@@ -87,7 +87,7 @@
   border-radius: 0.5rem;
   color: var(--white);
   font-size: 0.75rem;
-
+  visibility: hidden;
 }
 
 .services__help:hover .services__tooltip {
