@@ -14,8 +14,18 @@
     <link rel="stylesheet" href="Styles/main.css" />
     <link rel="stylesheet" href="Styles/navbar.css" />
     <link rel="stylesheet" href="Styles/footer.css" />
+    <link rel="stylesheet" href="Styles/mainpage.css" />
+    <link rel="icon" href="/Assets/Images/mobile_logo.png">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
     <script src="Script/navbar.js" defer></script>
+    <script src="Script/reviews.js" defer></script>
+    <script src="Script/faq.js" defer></script>
   </head>
   <body>
     <nav class="navigation">
@@ -128,6 +138,346 @@
 
 
 
+
+
+<main>
+  <section class="hero">
+    <div class="hero__head">
+      <img class="hero__logo" src="Assets/Images/logo_text.png" alt="Nexyros" />
+      <h1 class="hero__title">- The best servers for the best prices possible!</h1>
+    </div>
+
+    <p class="hero__text">
+      Don't believe us? See for yourself! Installation is easy and your server
+      will be ready in <span class="hero__highlight">less than 5 minutes!</span>
+      Choose from one of our packages below.
+    </p>
+  </section>
+
+  <section class="services">
+    <ul class="services__list">
+      <li class="services__item">
+        <a class="services__card" href="order.html">
+          <img class="services__icon" src="Assets/Icons/gamecontroller.svg" />
+          <span class="services__text">
+            <span class="services__name">Gameserver</span>
+            <span class="services__price">From €3.99</span>
+          </span>
+          <span class="services__help">
+            <img class="services__help-icon" src="Assets/Icons/blackquestionmark.svg" />
+            <span class="services__tooltip">
+              Run Minecraft, SCP: Secret Laboratory, FiveM and more. Your server
+              is deployed automatically within 5 minutes.
+            </span>
+          </span>
+        </a>
+      </li>
+
+      <li class="services__item">
+        <a class="services__card" href="order.html">
+          <img class="services__icon" src="Assets/Icons/voice.svg" />
+          <span class="services__text">
+            <span class="services__name">Voiceserver</span>
+            <span class="services__price">From €1.85</span>
+          </span>
+          <span class="services__help">
+            <img class="services__help-icon" src="Assets/Icons/blackquestionmark.svg" />
+            <span class="services__tooltip">
+              Voice server for your community with your own address, unlimited
+              channels and no player limit.
+            </span>
+          </span>
+        </a>
+      </li>
+
+      <li class="services__item">
+        <a class="services__card" href="order.html">
+          <img class="services__icon" src="Assets/Icons/server_square_cloud.svg" />
+          <span class="services__text">
+            <span class="services__name">VPS</span>
+            <span class="services__price">From €5.99</span>
+          </span>
+          <span class="services__help">
+            <img class="services__help-icon" src="Assets/Icons/blackquestionmark.svg" />
+            <span class="services__tooltip">
+              Virtual server with full root access. Install your own operating
+              system and run whatever you need.
+            </span>
+          </span>
+        </a>
+      </li>
+
+      <li class="services__item">
+        <a class="services__card" href="order.html">
+          <img class="services__icon" src="Assets/Icons/server.svg" />
+          <span class="services__text">
+            <span class="services__name">Dedicated Server</span>
+            <span class="services__price">From €11.99</span>
+          </span>
+          <span class="services__help">
+            <img class="services__help-icon" src="Assets/Icons/blackquestionmark.svg" />
+            <span class="services__tooltip">
+              A whole physical machine only for you. Full performance with
+              nothing shared with other customers.
+            </span>
+          </span>
+        </a>
+      </li>
+
+      <li class="services__item">
+        <a class="services__card" href="order.html">
+          <img class="services__icon" src="Assets/Icons/domains.svg" />
+          <span class="services__text">
+            <span class="services__name">Domain</span>
+            <span class="services__price">From €0.99</span>
+          </span>
+          <span class="services__help">
+            <img class="services__help-icon" src="Assets/Icons/blackquestionmark.svg" />
+            <span class="services__tooltip">
+              Your own domain name with DNS settings you can change any time.
+              Registration takes a few clicks.
+            </span>
+          </span>
+        </a>
+      </li>
+
+      <li class="services__item">
+        <a class="services__card" href="order.html">
+          <img class="services__icon" src="Assets/Icons/cloud_storage.svg" />
+          <span class="services__text">
+            <span class="services__name">Premium Storage</span>
+            <span class="services__price">From €1.49</span>
+          </span>
+          <span class="services__help">
+            <img class="services__help-icon" src="Assets/Icons/blackquestionmark.svg" />
+            <span class="services__tooltip">
+              Space for backups and files on fast SSD disks, reachable from
+              anywhere without a transfer limit.
+            </span>
+          </span>
+        </a>
+      </li>
+
+      <li class="services__item">
+        <a class="services__card" href="order.html">
+          <img class="services__icon" src="Assets/Icons/bot.svg" />
+          <span class="services__text">
+            <span class="services__name">Bot</span>
+            <span class="services__price">From €1.99</span>
+          </span>
+          <span class="services__help">
+            <img class="services__help-icon" src="Assets/Icons/blackquestionmark.svg" />
+            <span class="services__tooltip">
+              Hosting for Discord bots and other scripts that need to keep
+              running 24/7 without your computer.
+            </span>
+          </span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+
+
+  <section class="reviews">
+    <h2 class="reviews__title">What the customers say about us?</h2>
+
+    <div class="reviews__row">
+      <button class="reviews__arrow reviews__arrow--prev swiper-button-disabled">
+        <
+      </button>
+
+      <div class="reviews__slider swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+        <ul class="reviews__list swiper-wrapper">
+          <li class="reviews__item swiper-slide swiper-slide-active">
+            <img class="reviews__avatar" src="Assets/Images/minnie.png" alt="Minnie Mouse">
+            <p class="reviews__name">Minnie Mouse</p>
+            <p class="reviews__role">Gameserver Buyer</p>
+            <p class="reviews__quote">
+              "Ordered for the third time. No problems! Would recommend this
+              service to anyone here."
+            </p>
+          </li>
+
+          <li class="reviews__item swiper-slide swiper-slide-next">
+            <img class="reviews__avatar" src="Assets/Images/clark.png" alt="Captain Clark">
+            <p class="reviews__name">Clark</p>
+            <p class="reviews__role">VPS Buyer</p>
+            <p class="reviews__quote">
+              "Ordered at midnight, my VPS was live before I finished applying
+              for a job as an architect. Three months in, zero downtime and I
+              still pay less than my old host."
+            </p>
+          </li>
+
+          <li class="reviews__item swiper-slide">
+            <img class="reviews__avatar" src="Assets/Images/mcqueen.jpg" alt="Lightning McQueen">
+            <p class="reviews__name">Lightning McQueen</p>
+            <p class="reviews__role">Premium Storage Buyer</p>
+            <p class="reviews__quote">
+              "I couldn't be happier with the service here. Everything is very
+              fast, and there is really nothing I can say against this company."
+            </p>
+          </li>
+
+          <li class="reviews__item swiper-slide">
+            <img class="reviews__avatar" src="Assets/Images/frieren.png" alt="Frieren">
+            <p class="reviews__name">Frieren</p>
+            <p class="reviews__role">Domain Buyer</p>
+            <p class="reviews__quote">
+              "Registered a domain and pointed it at my server the same evening.
+              The DNS settings were far easier than I expected."
+            </p>
+          </li>
+
+          <li class="reviews__item swiper-slide">
+            <img class="reviews__avatar" src="Assets/Images/hori.png" alt="Hori">
+            <p class="reviews__name">Hori</p>
+            <p class="reviews__role">Voiceserver Buyer</p>
+            <p class="reviews__quote">
+              "Moved our whole group onto a voice server here. Nobody has
+              complained about lag once, which honestly never happens."
+            </p>
+          </li>
+
+          <li class="reviews__item swiper-slide">
+            <img class="reviews__avatar" src="Assets/Images/house.png" alt="Dr. House">
+            <p class="reviews__name">Dr. House</p>
+            <p class="reviews__role">Dedicated Server Buyer</p>
+            <p class="reviews__quote">
+              "Rented a dedicated machine for a project everyone said would be
+              too heavy for it. It has not stuttered once."
+            </p>
+          </li>
+        </ul>
+      </div>
+
+      <button class="reviews__arrow reviews__arrow--next">
+        >
+      </button>
+    </div>
+  </section>
+
+
+
+<section class="faq">
+    <h2 class="faq__title">FAQ (Frequently Asked Questions)</h2>
+
+    <ul class="faq__list">
+      <li>
+        <details class="faq__item">
+          <summary class="faq__question">
+            How long does the delivery take?
+            <img class="faq__arrow" src="Assets/Icons/downarrow.svg">
+          </summary>
+          <p class="faq__answer">
+            Your server is created automatically right after the payment goes
+            through. In most cases it is running within five minutes and you get
+            the login details by e-mail.
+          </p>
+        </details>
+      </li>
+
+      <li>
+        <details class="faq__item">
+          <summary class="faq__question">
+            Can I upgrade my server later?
+            <img class="faq__arrow" src="Assets/Icons/downarrow.svg">
+          </summary>
+          <p class="faq__answer">
+            Yes. Memory, disk space and slots can be changed any time and the
+            price is recalculated for the rest of the paid period. The server
+            only restarts once during the change.
+          </p>
+        </details>
+      </li>
+
+      <li>
+        <details class="faq__item">
+          <summary class="faq__question">
+            What happens if I do not pay on time?
+            <img class="faq__arrow" src="Assets/Icons/downarrow.svg">
+          </summary>
+          <p class="faq__answer">
+            Your server keeps running for three days after the due date. After
+            that it is suspended, but your data stays with us for another
+            fourteen days before it is deleted.
+          </p>
+        </details>
+      </li>
+
+      <li>
+        <details class="faq__item">
+          <summary class="faq__question">
+            Do you offer a refund?
+            <img class="faq__arrow" src="Assets/Icons/downarrow.svg">
+          </summary>
+          <p class="faq__answer">
+            If a service does not work as promised, write to our support within
+            fourteen days of the order and we will refund the unused part of the
+            period.
+          </p>
+        </details>
+      </li>
+    </ul>
+
+    <p class="faq__text">
+      Didn't find the answer to your question? No problem! You can contact us
+      with any of your inquiries.
+    </p>
+
+    <a class="faq__button" href="contactsform.html">Contact us!</a>
+  </section>
+
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <footer class="footer">
       <div class="footer__columns">
         <div class="footer__column">
@@ -175,7 +525,7 @@
             </li>
             <li class="footer__item">
               <img class="footer__icon" src="Assets/Icons/twitter.svg" />
-              <a class="footer__link" href="https://x.com/nexyros">X</a>
+              <a class="footer__link" href="https://x.com/nexyros">Twitter</a>
             </li>
             <li class="footer__item">
               <img class="footer__icon" src="Assets/Icons/bluesky.svg" />

@@ -100,6 +100,7 @@
 
   .footer__title {
     font-size: 1.5rem;
+    text-align: center;
   }
 
   .footer__bottom {
@@ -107,5 +108,17 @@
     align-items: center;
     justify-content: space-between;
     padding: 1.25rem 125px; /* používám px ze stejného důvodu */
+  }
+
+  .footer__company {
+    text-align: center;
+  }
+
+  .footer__text {
+    text-align: center;
+  }
+
+  .footer__list {
+    align-items: center;
   }
 }
