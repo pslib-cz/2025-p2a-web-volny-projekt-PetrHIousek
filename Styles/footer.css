@@ -1,124 +1,156 @@
-.footer {
-  background: var(--gray);
-  color: var(--white);
-  margin-top: auto; /* přidá margin takový, aby byl footer vždy na konci stránky*/
-}
+@layer components {
+  .footer {
+    background-color: var(--gray);
+    margin-top: auto; /* přidá margin takový, aby byl footer vždy na konci stránky*/
+  }
 
-.footer__columns {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  padding: 1.25rem;
-}
-
-.footer__column {
-  display: flex;
-  flex-direction: column;
-  gap: 0.625rem;
-}
-
-.footer__title {
-  margin: 0;
-  font-size: 1.25rem;
-  color: var(--white);
-}
-
-.footer__address {
-  display: flex;
-  flex-direction: column;
-  gap: 0.625rem;
-  padding: 0.625rem 0;
-  font-style: normal; /* <address> je jinak kurzivou */
-}
-
-.footer__company {
-  margin: 0;
-  color: var(--white-ish);
-}
-
-.footer__text {
-  margin: 0;
-  color: var(--gray-light);
-}
-
-.footer__list {
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.625rem;
-}
-
-.footer__item {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  padding: 5px 0; /* používám px, protože v rem jednotkách je to zbytečně dlouhé desetinné číslo */
-}
-
-.footer__icon {
-  display: block;
-  width: 1.25rem;
-  height: 1.25rem;
-}
-
-.footer__link {
-  color: var(--white);
-  text-decoration: none;
-}
-
-.footer__bottom {
-  display: flex;
-  flex-direction: column;
-  gap: 0.625rem;
-  padding: 1.25rem;
-  border-top: 1px solid var(--gray-light);
-}
-
-.footer__copyright {
-  margin: 0;
-  font-size: 0.75rem;
-  color: var(--white);
-}
-
-.footer__nav {
-  display: flex;
-  gap: 1.25rem;
-  font-size: 0.75rem;
-}
-
-@media (min-width: 1350px) {
   .footer__columns {
-    flex-direction: row;
-    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
     gap: 1.25rem;
-    padding: 4rem 125px; /* používám px ze stejného důvodu */
+    padding: 1.25rem;
   }
 
   .footer__column {
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
   }
 
   .footer__title {
-    font-size: 1.5rem;
-    text-align: center;
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--white);
   }
 
-  .footer__bottom {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.25rem 125px; /* používám px ze stejného důvodu */
+
+  .footer__address {
+    padding: 0.625rem 0;
+    font-style: normal; /* <address> je jinak kurzivou */
   }
 
   .footer__company {
-    text-align: center;
+    margin: 0;
+    color: var(--white-ish);
   }
 
   .footer__text {
-    text-align: center;
+    margin: 0;
+    color: var(--gray-light);
+    margin-top: 0.625rem;
   }
 
   .footer__list {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .footer__item {
+    display: flex;
     align-items: center;
+    gap: 1.25rem;
+    padding: 0.3125rem 0;
+  }
+
+  /* ikony dekorace, tak je vkladam pres CSS a ne pres <img> */
+  .footer__item::before {
+    content: "";
+    width: 1.25rem;
+    height: 1.25rem;
+    background-repeat: no-repeat; /* ikona se neopakuje */
+    background-position: center; /* ikona se umístí doprostřed */
+  }
+
+  .footer__item--mail::before {
+    background-image: url("../Assets/Icons/mail.svg");
+  }
+
+  .footer__item--phone::before {
+    background-image: url("../Assets/Icons/phone.svg");
+  }
+
+  .footer__item--discord::before {
+    background-image: url("../Assets/Icons/discord.svg");
+  }
+
+  .footer__item--instagram::before {
+    background-image: url("../Assets/Icons/instagram.svg");
+  }
+
+  .footer__item--twitter::before {
+    background-image: url("../Assets/Icons/twitter.svg");
+  }
+
+  .footer__item--bluesky::before {
+    background-image: url("../Assets/Icons/bluesky.svg");
+  }
+
+  .footer__link {
+    display: inline-block; /* odkaz nikdy nema zustat inline */
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  .footer__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    padding: 1.25rem;
+    border-top: 1px solid var(--gray-light);
+  }
+
+  .footer__copyright {
+    margin: 0;
+    font-size: 0.75rem;
+    color: var(--white);
+  }
+
+  .footer__nav {
+    font-size: 0.75rem;
+  }
+
+  .footer__menu {
+    display: flex;
+    gap: 1.25rem;
+    margin: 0; /* <menu> ma v defaultu margin i odsazeni pro odrazky */
+    padding: 0;
+    list-style: none;
+  }
+
+  @media (min-width: 1350px) {
+    .footer__columns {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 4rem 7.8125rem;
+    }
+
+    .footer__column {
+      flex: 1;
+    }
+
+    .footer__title {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    .footer__bottom {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 1.25rem 7.8125rem;
+    }
+
+    .footer__company {
+      text-align: center;
+    }
+
+    .footer__text {
+      text-align: center;
+    }
+
+    .footer__list {
+      align-items: center;
+    }
   }
 }

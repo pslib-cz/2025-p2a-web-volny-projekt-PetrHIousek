@@ -1,231 +1,289 @@
-.navbar {
-  display: flex;
-  min-height: 60px;
-  justify-content: space-between;
-  align-items: center;
-  align-self: stretch;
-  flex-wrap: wrap;
-  font-weight: bold; /* v navbaru je vsechno bold, sooo */
-}
-
-.logo {
-  display: flex;
-  padding: 0.625rem;
-  justify-content: center;
-  align-items: center;
-  align-self: stretch;
-  flex-shrink: 0;
-  margin-left: 1.25rem;
-}
-
-.logo__image {
-  display: block;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-.navbar__buttons {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  flex-shrink: 0;
-  align-self: stretch;
-  gap: 1.25rem;
-  margin-right: 1.25rem;
-}
-
-.navbar__button {
-  display: flex;
-  padding: 0.625rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-.navbar__button--support {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: stretch;
-  padding: 0;
-  width: 100px;
-  background: var(--gray-light);
-  color: var(--black);
-  text-decoration: none;
-}
-
-.menu .menu__toggle-icon--open {
-  display: block;
-}
-.menu .menu__toggle-icon--close {
-  display: none;
-}
-
-.navigation--menu-open .menu__toggle-icon--open {
-  display: none;
-}
-.navigation--menu-open .menu__toggle-icon--close {
-  display: block;
-}
-
-.menu__panel {
-  display: none;
-  margin: 0;
-  padding: 1.25rem;
-  list-style: none;
-  border: 1px solid var(--black);
-  order: 1;
-  width: 100%;
-}
-
-.navigation--menu-open .menu__panel {
-  display: flex;
-  flex-direction: column;
-}
-
-.menu__row {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  padding: 0.625rem;
-  color: var(--black);
-  text-decoration: none;
-}
-
-.menu__icon {
-  display: block;
-}
-
-.logo__text {
-  display: none;
-}
-
-.menu__item--pc {
-  display: none;
-}
-
-.menu__item--mobile {
-  order: -1; /* login/register by měl být nahoře */
-}
-
-.navbar__button--rent,
-.menu__toggle {
-  width: 25px;
-  height: 25px;
-  padding: 0;
-}
-
-.navbar__button-icon,
-.menu__toggle-icon {
-  display: block; /* v defaultu je img inline a dělalo to mezeru pod účařím */
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.navbar__button--rent .navbar__button-text {
-  display: none;
-}
-
-.navbar__button--login {
-  display: none;
-}
-
-/* pc breakpoint 1350px */
-
-@media (min-width: 1350px) {
+@layer components {
   .navbar {
-    min-height: 90px;
-    padding: 0;
+    display: flex;
+    min-height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    flex-wrap: wrap;
+    font-weight: bold; 
   }
 
   .logo {
-    gap: 1.25rem;
-    padding: 0 1.25rem;
-    margin-left: 0;
-  }
-  .logo__image {
-    width: 69px; /* dle figma designu */
-    height: 50px; /* dle figma designu */
-  }
-  .logo__text {
-    display: block;
-    width: 160px;
-    height: 18px;
-  }
-
-  .menu__panel,
-  .navigation--menu-open .menu__panel {
     display: flex;
-    order: 0;
-    width: auto; /* ruší width: 100% z mobilu */
-    margin: 0;
-    align-self: stretch;
-    gap: 1.25rem;
-    padding: 0;
-    border: 0; /* rameček patří jen rozbaleneu menu na mobilu */
-    flex-direction: row; /* delalo to picoviny, na 1350px se to zarovnavalo pod sebe */
-  }
-
-  .menu__item {
-    display: flex;
-    align-self: stretch;
-    width: 90px;
-  }
-  .menu__item--pc {
-    display: flex;
-  }
-  .menu__item--mobile {
-    display: none;
-  }
-  .menu__icon {
-    display: none;
-  }
-
-  .menu__row {
-    width: 100%;
-    align-self: stretch;
+    padding: 0.625rem;
     justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    flex-shrink: 0;
+    margin-left: 1.25rem;
   }
 
-  .navbar__button {
-    width: 170px;
-    height: auto; /* ruší 25px */
-    align-self: stretch;
-    flex-direction: row;
-    padding: 0;
-    text-decoration: none;
-    color: var(--black);
+  .logo__image {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
   }
 
   .navbar__buttons {
-    order: 1;
-    gap: 0;
-    margin-right: 0;
-  }
-
-  .navbar__button-icon {
-    display: none;
-  }
-
-  .navbar__button--rent {
-    order: -1;
-    background: var(--green);
-  }
-  .navbar__button--rent .navbar__button-text {
-    display: block;
-  }
-  .navbar__button--support {
-    width: 170px;
-    background: var(--gray-light);
-  }
-  .navbar__button--login {
     display: flex;
-    background: var(--white-ish);
+    justify-content: flex-end;
+    align-items: center;
+    flex-shrink: 0;
+    align-self: stretch;
+    gap: 1.25rem;
+    margin-right: 1.25rem;
   }
-  .menu {
+
+  .navbar__button {
+    display: flex;
+    padding: 0.625rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .navbar__button--support {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    padding: 0;
+    width: 100px;
+    background: var(--gray-light);
+    color: var(--black);
+    text-decoration: none;
+  }
+
+  /* ikony jsou dekorace, vkladam pres CSS a ne pres <img> */
+  .menu__toggle::before,
+  .navbar__button--rent::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat; /* ikona se neopakuje */
+    background-position: center; /* ikona se umístí doprostřed */
+    background-size: contain; /* hamburger je 27px, bez tohohle by se oriznul */
+  }
+
+  .menu__toggle::before {
+    background-image: url("../Assets/Icons/Hamburger-menu.svg");
+  }
+
+  .navbar__button--rent::before {
+    background-image: url("../Assets/Icons/plus.svg");
+  }
+
+  /* po rozbaleni se prekresli na krizek */
+  .navigation--menu-open .menu__toggle::before {
+    background-image: url("../Assets/Icons/Hamburger-menu-open.svg");
+  }
+
+  /* panel je porad vykresleny, jen smrskLy na nulovou vysku */
+  .menu__panel {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 0;
+    padding: 0 1.25rem; /* svisly padding az po otevreni, jinak by koukal i zavreny */
+    list-style: none;
+    border: 0 solid var(--black);
+    order: 1;
+    width: 100%;
+    max-height: 0;
+    transition:
+      max-height 250ms ease,
+      padding 250ms ease,
+      border-width 250ms ease;
+  }
+
+  /* 280px je o neco vic nez skutecnych 262px, ktere panel ma.
+     kdyby pribyla dalsi polozka menu, je potreba to zvednout */
+  .navigation--menu-open .menu__panel {
+    max-height: 280px;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-width: 1px;
+  }
+
+
+
+  .menu__row {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 0.625rem;
+    color: var(--black);
+    text-decoration: none;
+  }
+
+  .menu__row--servers::before,
+  .menu__row--reviews::before,
+  .menu__row--faq::before,
+  .menu__row--contacts::before,
+  .menu__row--login::before {
+    content: "";
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .menu__row--servers::before {
+    background-image: url("../Assets/Icons/server.svg");
+  }
+
+  .menu__row--reviews::before {
+    background-image: url("../Assets/Icons/reviews.svg");
+  }
+
+  .menu__row--faq::before {
+    background-image: url("../Assets/Icons/faq.svg");
+  }
+
+  .menu__row--contacts::before {
+    background-image: url("../Assets/Icons/contacts.svg");
+  }
+
+  .menu__row--login::before {
+    background-image: url("../Assets/Icons/login.svg");
+  }
+
+  .logo__text {
     display: none;
+  }
+
+  .menu__item--pc {
+    display: none;
+  }
+
+  .menu__item--mobile {
+    order: -1; /* login/register by měl být nahoře */
+  }
+
+  .navbar__button--rent,
+  .menu__toggle {
+    width: 25px;
+    height: 25px;
+    padding: 0;
+  }
+
+  .navbar__button--rent .navbar__button-text {
+    display: none;
+  }
+
+  .navbar__button--login {
+    display: none;
+  }
+
+  /* pc breakpoint 1350px */
+
+  @media (min-width: 1350px) {
+    .navbar {
+      min-height: 90px;
+      padding: 0;
+    }
+
+    .logo {
+      gap: 1.25rem;
+      padding: 0 1.25rem;
+      margin-left: 0;
+    }
+    .logo__image {
+      width: 69px; /* dle figma designu */
+      height: 50px; /* dle figma designu */
+    }
+    .logo__text {
+      display: block;
+      width: 160px;
+      height: 18px;
+    }
+
+    .menu__panel,
+    .navigation--menu-open .menu__panel {
+      display: flex;
+      order: 0;
+      width: auto; /* ruší width: 100% z mobilu */
+      margin: 0;
+      align-self: stretch;
+      gap: 1.25rem;
+      padding: 0;
+      border: 0; /* rameček patří jen rozbaleneu menu na mobilu */
+      flex-direction: row; /* na 1350px se to zarovnavalo pod sebe */
+      max-height: none; /* ruší smrsknuti z mobilu, tady je z panelu lista */
+      transition: none; /* na PC se nic nerozbaluje, takze ani neanimuje */
+    }
+
+    .menu__item {
+      display: flex;
+      align-self: stretch;
+      width: 90px;
+    }
+    .menu__item--pc {
+      display: flex;
+    }
+    .menu__item--mobile {
+      display: none;
+    }
+    /* na PC jsou odkazy bez ikon */
+    .menu__row--servers::before,
+    .menu__row--reviews::before,
+    .menu__row--faq::before,
+    .menu__row--contacts::before,
+    .menu__row--login::before {
+      display: none;
+    }
+
+    .menu__row {
+      width: 100%;
+      align-self: stretch;
+      justify-content: center;
+    }
+
+    .navbar__button {
+      width: 170px;
+      height: auto; /* ruší 25px */
+      align-self: stretch;
+      flex-direction: row;
+      padding: 0;
+      text-decoration: none;
+      color: var(--black);
+    }
+
+    .navbar__buttons {
+      order: 1;
+      gap: 0;
+      margin-right: 0;
+    }
+
+    .navbar__button--rent::before {
+      display: none;
+    }
+
+    .navbar__button--rent {
+      order: -1;
+      background: var(--green);
+    }
+    .navbar__button--rent .navbar__button-text {
+      display: block;
+    }
+    .navbar__button--support {
+      width: 170px;
+      background: var(--gray-light);
+    }
+    .navbar__button--login {
+      display: flex;
+      background: var(--white-ish);
+    }
+    .menu {
+      display: none;
+    }
+
+
+    
   }
 }

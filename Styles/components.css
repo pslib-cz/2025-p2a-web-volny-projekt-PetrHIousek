@@ -1,0 +1,700 @@
+@layer components {
+  /* znovupouzitelne - karty, seznamy, bubliny, souhrn */
+
+  /* radia jsou schovaná, ale musí jít vybrat klávesnicí */
+  .services__input,
+  .products__input,
+  .locations__input {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+  }
+
+  /* KARTY SLUZEB - stejna komponenta na homepage i v objadnavce */
+
+  .services {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 475px));
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .services__card {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80px;
+    padding: 0.9375rem 1.25rem;
+    background: var(--white-ish);
+    border-radius: 1rem;
+    color: var(--black);
+    text-decoration: none;
+  }
+
+  .services__input:checked + .services__card {
+    background: var(--green);
+    color: var(--white);
+  }
+
+  /* cena ma vlastni barvu, musim prebarvit zvlast - jinak by zelena na zelene zanikla */
+  .services__input:checked + .services__card .services__price {
+    color: var(--white);
+  }
+
+  .services__input:focus-visible + .services__card {
+    outline: 2px solid var(--green-dark);
+  }
+
+  /* ikony jsou dekorace, tak je vkladam pres CSS a ne pres <img> */
+  .services__card::before,
+  .services__help::before {
+    content: "";
+    flex-shrink: 0;
+    width: 1.125rem;
+    height: 1.125rem;
+    background-repeat: no-repeat; /* ikona se neopakuje */
+    background-position: center; /* ikona se umístí doprostřed */
+  }
+
+  .services__card--gameserver::before {
+    background-image: url("../Assets/Icons/gamecontroller.svg");
+  }
+
+  .services__card--voiceserver::before {
+    background-image: url("../Assets/Icons/voice.svg");
+  }
+
+  .services__card--vps::before {
+    background-image: url("../Assets/Icons/server_square_cloud.svg");
+  }
+
+  .services__card--dedicated::before {
+    background-image: url("../Assets/Icons/server.svg");
+  }
+
+  .services__card--domain::before {
+    background-image: url("../Assets/Icons/domains.svg");
+  }
+
+  .services__card--storage::before {
+    background-image: url("../Assets/Icons/cloud_storage.svg");
+  }
+
+  .services__card--bot::before {
+    background-image: url("../Assets/Icons/bot.svg");
+  }
+
+  .services__help::before {
+    background-image: url("../Assets/Icons/blackquestionmark.svg");
+  }
+
+  .services__help {
+    position: relative; /* kotva pro bublinu */
+    display: flex;
+  }
+
+  .services__tooltip {
+    position: absolute;
+    bottom: 100%; /* nad otazníkem */
+    right: 0; /* rozbaluje se doleva, aby nevylezla z okna */
+    width: 220px;
+    padding: 0.625rem;
+    background: var(--gray);
+    border-radius: 0.5rem;
+    color: var(--white);
+    font-size: 0.75rem;
+    visibility: hidden;
+  }
+
+
+  .services__card:hover .services__tooltip {
+    visibility: visible;
+  }
+
+  .services__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .services__name {
+    font-size: 0.75rem;
+  }
+
+  .services__price {
+    font-family: "Intel One Mono";
+    font-size: 0.75rem;
+    color: var(--green);
+  }
+
+  /* NABIDKA PRODUKTU - kazda sluzba ma jinou, skryva se a odkryva podle toho co je vybrany */
+
+
+  .products {
+    display: none;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .order--gameserver .products--gameserver,
+  .order--voiceserver .products--voiceserver,
+  .order--vps .products--vps,
+  .order--dedicated .products--dedicated,
+  .order--domain .products--domain,
+  .order--bot .products--bot {
+    display: flex;
+  }
+
+  .products__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid var(--gray-light);
+    border-radius: 1rem;
+    overflow: hidden; /* aby vybraná zelená nepřelezla zaoblené rohy */
+  }
+
+  .products__row {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 0.9375rem 1.25rem;
+    font-size: 0.75rem;
+  }
+
+  .products__input:checked + .products__row {
+    background: var(--green);
+    color: var(--white);
+  }
+
+
+
+  .products__row::before {
+    content: "";
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .products__row--minecraft::before {
+    background-image: url("../Assets/Icons/minecraft.svg");
+  }
+
+  .products__row--scp::before {
+    background-image: url("../Assets/Icons/scp.svg");
+  }
+
+  .products__row--fivem::before {
+    background-image: url("../Assets/Icons/fivem.svg");
+  }
+
+  .products__row--subnautica::before {
+    background-image: url("../Assets/Icons/subnautica.svg");
+  }
+
+  .products__row--voice::before {
+    background-image: url("../Assets/Icons/voice.svg");
+  }
+
+  .products__row--server-square-cloud::before {
+    background-image: url("../Assets/Icons/server_square_cloud.svg");
+  }
+
+  .products__row--server::before {
+    background-image: url("../Assets/Icons/server.svg");
+  }
+
+  .products__row--domains::before {
+    background-image: url("../Assets/Icons/domains.svg");
+  }
+
+  .products__row--discord::before {
+    background-image: url("../Assets/Icons/discord.svg");
+  }
+
+  .products__row--bot::before {
+    background-image: url("../Assets/Icons/bot.svg");
+  }
+
+  /* vyber lokality */
+
+  .locations {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+  }
+
+  .locations__button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    width: 4.5rem;
+    text-align: center;
+  }
+
+  /* kolecko i mapa v nem jsou dekorace, delam jednim ::before */
+  .locations__button::before {
+    content: "";
+    width: 3.125rem;
+    height: 3.125rem;
+    background-color: var(--white-ish);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1.875rem; /* velikost mapy uvnitr kolecka */
+    border-radius: 50%;
+  }
+
+  .locations__input:checked + .locations__button::before {
+    background-color: var(--green);
+  }
+
+  .locations__button--africa::before {
+    background-image: url("../Assets/Icons/Africa.svg");
+  }
+
+  .locations__button--europe::before {
+    background-image: url("../Assets/Icons/Europe.svg");
+  }
+
+  .locations__button--asia::before {
+    background-image: url("../Assets/Icons/Asia.svg");
+  }
+
+  .locations__button--oceania::before {
+    background-image: url("../Assets/Icons/Oceania.svg");
+  }
+
+  .locations__button--northamerica::before {
+    background-image: url("../Assets/Icons/northAmerica.svg");
+  }
+
+  .locations__button--southamerica::before {
+    background-image: url("../Assets/Icons/southAmerica.svg");
+  }
+
+  .locations__name {
+    font-size: 0.75rem;
+  }
+
+  /* konfigurace balicku */
+
+
+  .package {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .package__fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+
+  .package__field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  /* kazda sluzba se konfiguruje jinak, tak pole, ktera pro to neplati, schovam */
+  .order--voiceserver .package__field--memory,
+  .order--voiceserver .package__field--cpu,
+  .order--voiceserver .package__field--disk,
+  .order--storage .package__field--memory,
+  .order--storage .package__field--cpu,
+  .order--storage .package__field--slots,
+  .order--bot .package__field--cpu,
+  .order--bot .package__field--slots,
+  .order--vps .package__field--slots,
+  .order--dedicated .package__field--slots {
+    display: none;
+  }
+
+  /* u domeny neni co nastavovat, zmizi cela nabidka */
+  .order--domain .package {
+    display: none;
+  }
+
+  .package__label {
+    font-size: 0.75rem;
+  }
+
+  .package__select {
+    padding: 0.625rem 2.5rem 0.625rem 0.5rem;
+    font-size: 0.75rem;
+    border: 1px solid var(--green);
+    border-radius: 0.5rem;
+  }
+
+  /* souhrn objednavky */
+
+  .summary {
+    border: 1px solid var(--green);
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  .summary__title {
+    margin: 0;
+    padding: 0.625rem 1.25rem;
+    background: var(--green);
+    color: var(--white);
+    font-size: 1rem;
+  }
+
+  .summary__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .summary__row {
+    display: flex;
+    gap: 1.25rem;
+    padding: 0.625rem 1.25rem;
+    border-bottom: 1px solid var(--white-ish);
+    font-size: 0.75rem;
+  }
+
+  .summary__key {
+    width: 40%;
+  }
+
+  .summary__value {
+    width: 60%;
+  }
+
+  .summary__price {
+    color: var(--green);
+  }
+
+  .summary__total {
+    margin: 0;
+    padding: 1.25rem;
+    color: var(--green);
+    font-size: 1.25rem;
+
+    text-align: center;
+  }
+
+  .summary__button {
+    width: 100%;
+    padding: 0.9375rem;
+    background: var(--green);
+    border: 0;
+    color: var(--white);
+    font-family: inherit;
+    font-size: 0.75rem;
+
+  }
+
+  /* recenze */
+
+  .reviews__title {
+    margin: 0;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .reviews__row {
+    display: flex;
+    align-self: stretch;
+    gap: 0.625rem;
+  }
+
+  .reviews__list {
+    margin: 0;
+    padding: 0;
+  }
+
+  .reviews__arrow {
+    padding: 0 0.625rem;
+    background: none;
+    border: 0;
+    font-size: 2rem;
+  }
+
+  .reviews__item {
+    padding: 1.25rem 0;
+    text-align: center;
+  }
+
+  .reviews__avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .reviews__name {
+    margin: 0;
+  }
+
+  .reviews__role {
+    margin: 0;
+    font-size: 0.75rem;
+    color: var(--green-dark);
+  }
+
+  .reviews__quote {
+    font-style: italic;
+  }
+
+  /* faq */
+
+  .faq__title {
+    font-size: 1rem;
+  }
+
+  .faq__list {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .faq__item {
+    border-radius: 1.75rem;
+    overflow: hidden; /* aby odpověď nepřelezla zaoblené rohy */
+  }
+
+  .faq__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 35px;
+    padding: 0.625rem 1.25rem;
+    background: var(--green);
+  }
+
+  .faq__item--open .faq__question {
+    background: var(--green-dark);
+    color: var(--white);
+  }
+
+  .faq__question::after {
+    content: "";
+    flex-shrink: 0;
+    width: 1rem;
+    height: 1rem;
+    background-image: url("../Assets/Icons/downarrow.svg");
+    background-repeat: no-repeat; /* ikona se neopakuje */
+    background-position: center; /* ikona se umístí doprostřed */
+  }
+
+  .faq__item--open .faq__question::after {
+    transform: rotate(180deg);
+  }
+
+  .faq__answer {
+    margin: 0;
+    padding: 0.625rem;
+    background: var(--white-ish);
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  .faq__text {
+    text-align: center;
+  }
+
+  .faq__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 280px;
+    min-height: 45px;
+    padding: 0.625rem;
+    background: var(--green);
+    border-radius: 0.75rem;
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  /* kontaktni udaje */
+
+  .contacts__title {
+    margin: 0;
+  }
+
+  .contacts__address {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    padding: 0.625rem 0;
+    font-style: normal; /* <address> je jinak kurzivou */
+    font-weight: bold;
+  }
+
+
+
+  .contacts__text {
+    margin: 0;
+  }
+
+  .contacts__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    padding: 0;
+    list-style: none;
+  }
+
+
+
+  .contacts__item {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.3125rem 0;
+    font-weight: bold;
+  }
+
+  /* ikony jsou dekorace, vkladam pres CSS */
+  .contacts__item::before {
+    content: "";
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .contacts__item--mail::before {
+    background-image: url("../Assets/Icons/mail-black.svg");
+  }
+
+  .contacts__item--phone::before {
+    background-image: url("../Assets/Icons/phone-black.svg");
+  }
+
+  .contacts__link {
+    color: var(--black);
+    text-decoration: none;
+  }
+
+  @media (min-width: 600px) {
+    .services {
+      gap: 30px;
+    }
+
+    .services__card {
+      min-height: 100px;
+      border-radius: 3rem;
+    }
+
+    .services__card::before,
+    .services__help::before {
+      width: 1.875rem;
+      height: 1.875rem;
+    }
+
+    .services__name,
+    .services__price {
+      font-size: 1.5rem;
+    }
+
+    .products__row,
+    .locations__name,
+    .package__label,
+    .package__select,
+    .summary__row,
+    .summary__button {
+      font-size: 1rem;
+    }
+
+    .summary__title {
+      font-size: 1.25rem;
+    }
+
+    .summary__total {
+      font-size: 1.5rem;
+    }
+
+    .reviews__title,
+    .reviews__name,
+    .reviews__quote {
+      font-size: 1.5rem;
+    }
+
+    .reviews__role {
+      font-size: 1rem;
+    }
+
+    .faq__title,
+    .faq__text,
+    .faq__question,
+    .faq__answer {
+      font-size: 1.5rem;
+    }
+
+    .faq__question {
+      min-height: 60px;
+      padding: 0.625rem 2.5rem;
+    }
+
+    .faq__question::after {
+      width: 1.875rem;
+      height: 1.875rem;
+    }
+
+    .faq__answer {
+      padding: 1.25rem 2.5rem;
+    }
+
+    .faq__button {
+      max-width: 300px;
+      min-height: 50px;
+    }
+  }
+
+  @media (min-width: 1350px) {
+    .summary {
+      align-self: center; /* svisle na stred vedle konfigurace */
+      width: 437px; /* dle figma designu */
+    }
+
+    .package__fields {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .package__field {
+      width: calc(50% - 0.625rem);
+    }
+
+    .contacts__title {
+      font-size: 3rem;
+    }
+
+    .contacts__link,
+    .contacts__text {
+      font-size: 1.5rem;
+    }
+
+    .contacts__item::before {
+      width: 1.875rem;
+      height: 1.875rem;
+    }
+  }
+}

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contacts | Nexyros</title>
+    <title>Register | Nexyros</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,12 +13,10 @@
     <link rel="stylesheet" href="Styles/layers.css" />
     <link rel="stylesheet" href="Styles/normalize.css" />
     <link rel="stylesheet" href="Styles/main.css" />
-    <link rel="stylesheet" href="Styles/layout.css" />
     <link rel="stylesheet" href="Styles/navbar.css" />
     <link rel="stylesheet" href="Styles/footer.css" />
-    <link rel="stylesheet" href="Styles/components.css" />
     <link rel="stylesheet" href="Styles/forms.css" />
-    <link rel="icon" href="Assets/Images/mobile_logo.png">
+    <link rel="icon" href="Assets/Images/mobile_logo.png" />
     <script src="Script/navbar.js" defer></script>
   </head>
   <body>
@@ -95,7 +93,7 @@
           </li>
 
           <li class="menu__item menu__item--mobile">
-            <a class="menu__row menu__row--login" href="sign.html">
+            <a class="menu__row menu__row--login" href="#">
               <span>Login / Register</span>
             </a>
           </li>
@@ -103,79 +101,48 @@
       </div>
     </nav>
 
-    <main class="contacts">
-      <div class="contacts__info">
-        <h1 class="contacts__title">Contacts</h1>
+    <form class="form form--auth">
+      <h1 class="form__title">Register</h1>
 
-        <address class="contacts__address">
-          <p class="contacts__text">Nexyros s.r.o.</p>
-          <p class="contacts__text">
-            Address: Školní 1500, 382 82, Benešov nad Cernou
-          </p>
-          <p class="contacts__text">IČO: 05368142</p>
-          <p class="contacts__text">DIČ: CZ08426718</p>
-        </address>
-
-        <ul class="contacts__list">
-          <li class="contacts__item contacts__item--mail">
-            <a class="contacts__link" href="#">E-mail: info@nexyros.eu</a>
-          </li>
-          <li class="contacts__item contacts__item--phone">
-            <a class="contacts__link" href="#">Phone: +420 722 689 341</a>
-          </li>
-        </ul>
-
-        <p class="contacts__text">
-          Have you decided to contact us about one of our services? Do you have
-          questions that aren't answered on our website? Would you like to place
-          a large order as a business? Then you've come to the right place! Fill
-          out the contact form below, and we'll get back to you as soon as
-          possible regarding your inquiry.
-        </p>
+      <div class="form__field">
+        <label for="email">E-mail</label>
+        <input
+          class="form__input"
+          id="email"
+          type="email"
+          placeholder="e.g. jan.novak@gmail.com"
+        />
       </div>
 
-      <form class="form">
-        <h2 class="form__title">Contact form</h2>
+      <div class="form__field">
+        <label for="password">Password</label>
+        <input
+          class="form__input"
+          id="password"
+          type="password"
+          placeholder="Your password"
+        />
+      </div>
 
-        <div class="form__field">
-          <label for="name">Name and surname</label>
-          <input class="form__input" id="name" placeholder="e.g. Jan Novák" />
-        </div>
+      <div class="form__field">
+        <label for="password">Password again</label>
+        <input
+          class="form__input"
+          id="password"
+          type="password"
+          placeholder="Your password again"
+        />
+      </div>
 
-        <div class="form__field">
-          <label for="email">E-mail</label>
-          <input
-            class="form__input"
-            id="email"
-            type="email"
-            placeholder="e.g. jan.novak@gmail.com"
-          />
-        </div>
+      <input class="form__button" type="submit" value="Register" />
 
-        <div class="form__field">
-          <label for="phone">Phone number</label>
-          <input
-            class="form__input"
-            id="phone"
-            type="tel"
-            placeholder="e.g. +420 722 692 483"
-          />
-        </div>
-
-        <div class="form__field">
-          <label for="message">Your message</label>
-          <textarea
-            class="form__input form__input--message"
-            id="message"
-            placeholder="e.g. Hello, your service stopped working for me this morning, and I don't know..."
-          ></textarea>
-        </div>
-
-        <input class="form__button" type="submit" value="Send inquiry" />
-
-        <p class="form__note">Actual wait time is around 1-2 days.</p>
-      </form>
-    </main>
+      <p class="form__note">
+        If you have an account, you can
+        <span class="form__link"
+          ><a class="form__link" href="sign.html">sign in here</a>.</span
+        >
+      </p>
+    </form>
 
     <footer class="footer">
       <div class="footer__columns">

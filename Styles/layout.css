@@ -1,0 +1,163 @@
+@layer layout {
+  /* rozvrzeni stranek a sekci - kostra, do ktere se sazi komponenty */
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center; /* kvuli pc */
+    padding: 3.125rem 3.125rem 0;
+  }
+
+  .main__head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.625rem;
+  }
+
+  .main__logo {
+    width: 11rem;
+    height: 1.25rem;
+  }
+
+  .main__title {
+    margin: 0;
+    max-width: 15rem;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .main__text {
+    margin: 0;
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  .main__highlight {
+    color: var(--green);
+  }
+
+  .offer {
+    padding: 1.125rem 3.125rem 3.25rem;
+  }
+
+  .reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 1.125rem 3.125rem 0;
+  }
+
+  .faq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 0 3.125rem 3.25rem;
+  }
+
+  .contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.25rem;
+  }
+
+  .contacts__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    padding: 3.125rem 0;
+  }
+
+  .order {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.25rem;
+  }
+
+  .order__config {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .order__title {
+    margin: 1.25rem 0 0;
+    font-size: 1.25rem;
+  }
+
+  @media (min-width: 600px) {
+    .main {
+      gap: 3.125rem;
+      padding-top: 5.625rem;
+    }
+
+    .main__logo {
+      width: 420px;
+      height: 48px;
+    }
+
+    .main__title {
+      max-width: none;
+      font-size: 2rem;
+    }
+
+    .main__text {
+      font-size: 1.5rem;
+    }
+
+    .offer {
+      padding-top: 3.125rem;
+      padding-bottom: 5.625rem;
+    }
+
+    .reviews {
+      padding-bottom: 5.625rem;
+    }
+
+    .faq {
+      gap: 35px;
+      padding-bottom: 5.625rem;
+    }
+
+    .order {
+      padding: 1.25rem
+    }
+
+    .order__title {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1350px) {
+    .contacts {
+      flex-direction: row;
+      gap: 290px;
+      padding: 5.625rem 7.1875rem;
+    }
+
+    .contacts__info {
+      flex: 1;
+    }
+
+    /* od 1350px se souhrn postaví vedle konfigurace, jako v návrhu */
+    .order {
+      flex-direction: row;
+      gap: 3.125rem;
+    }
+
+    .order__config {
+      flex: 1;
+    }
+  }
+
+  @media (min-width: 1750px) {
+    .main__head {
+      flex-direction: row;
+    }
+  }
+}

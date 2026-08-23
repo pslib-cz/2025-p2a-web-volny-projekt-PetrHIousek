@@ -3,19 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nexyros | Server order</title>
+    <title>Server order | Nexyros</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="Styles/layers.css" />
     <link rel="stylesheet" href="Styles/normalize.css" />
     <link rel="stylesheet" href="Styles/main.css" />
+    <link rel="stylesheet" href="Styles/layout.css" />
     <link rel="stylesheet" href="Styles/navbar.css" />
     <link rel="stylesheet" href="Styles/footer.css" />
-    <link rel="icon" href="/Assets/Images/mobile_logo.png">
+    <link rel="stylesheet" href="Styles/components.css" />
+    <link rel="icon" href="Assets/Images/mobile_logo.png">
     <script src="Script/navbar.js" defer></script>
+    <script src="Script/order.js" defer></script>
   </head>
   <body>
     <nav class="navigation">
@@ -23,11 +27,15 @@
         <a class="logo" href="index.html">
           <img
             src="Assets/Images/mobile_logo.png"
+            width="52"
+            height="40"
             alt="Logo Nexyros"
             class="logo__image"
           />
           <img
             src="Assets/Images/logo_text.png"
+            width="160"
+            height="18"
             alt="Nexyros"
             class="logo__text"
           />
@@ -39,37 +47,21 @@
             ><span class="navbar__button-text">Support</span>
           </a>
 
-          <a href="order.html" class="navbar__button navbar__button--rent">
-            <img
-              class="navbar__button-icon"
-              src="Assets/Icons/plus.svg"
-              alt="Add a server"
-            />
+          <a
+            href="order.html"
+            class="navbar__button navbar__button--rent"
+          >
             <span class="navbar__button-text">Rent a server</span>
           </a>
 
-          <a href="#" class="navbar__button navbar__button--login">
-            <img
-              class="navbar__button-icon"
-              src="Assets/Icons/login.svg"
-              alt="Login"
-            />
+          <a href="sign.html" class="navbar__button navbar__button--login">
             <span class="navbar__button-text">Login / Register</span>
           </a>
 
           <details class="menu">
-            <summary class="navbar__button menu__toggle">
-              <img
-                class="menu__toggle-icon menu__toggle-icon--open"
-                src="Assets/Icons/Hamburger-menu.svg"
-                alt="Open menu"
-              />
-              <img
-                class="menu__toggle-icon menu__toggle-icon--close"
-                src="Assets/Icons/Hamburger-menu-open.svg"
-                alt="Close menu"
-              />
-            </summary>
+            <summary
+              class="navbar__button menu__toggle"
+            ></summary>
           </details>
         </div>
 
@@ -79,36 +71,31 @@
           </li>
 
           <li class="menu__item">
-            <a class="menu__row" href="order.html">
-              <img class="menu__icon" src="Assets/Icons/server.svg" />
+            <a class="menu__row menu__row--servers" href="order.html">
               <span>Servers</span>
             </a>
           </li>
 
           <li class="menu__item">
-            <a class="menu__row" href="index.html">
-              <img class="menu__icon" src="Assets/Icons/reviews.svg" />
+            <a class="menu__row menu__row--reviews" href="index.html">
               <span>Reviews</span>
             </a>
           </li>
 
           <li class="menu__item">
-            <a class="menu__row" href="index.html">
-              <img class="menu__icon" src="Assets/Icons/faq.svg" />
+            <a class="menu__row menu__row--faq" href="index.html">
               <span>FAQ</span>
             </a>
           </li>
 
           <li class="menu__item">
-            <a class="menu__row" href="contactsform.html">
-              <img class="menu__icon" src="Assets/Icons/contacts.svg" />
+            <a class="menu__row menu__row--contacts" href="contactsform.html">
               <span>Contacts</span>
             </a>
           </li>
 
           <li class="menu__item menu__item--mobile">
-            <a class="menu__row" href="#">
-              <img class="menu__icon" src="Assets/Icons/login.svg" />
+            <a class="menu__row menu__row--login" href="sign.html">
               <span>Login / Register</span>
             </a>
           </li>
@@ -116,17 +103,410 @@
       </div>
     </nav>
 
+    <main class="order order--gameserver">
+      <div class="order__config">
+        <h1 class="order__title">Choose your desired service</h1>
 
+        <ul class="services">
+          <li>
+            <input class="services__input" type="radio" name="service" id="service-gameserver" value="gameserver" checked />
+            <label class="services__card services__card--gameserver" for="service-gameserver">
+              <span class="services__text">
+                <span class="services__name">Gameserver</span>
+                <span class="services__price">From €3.99</span>
+              </span>
+              <span class="services__help">
+                <span class="services__tooltip">Run Minecraft, SCP: Secret Laboratory, FiveM and more. Your server is deployed automatically within 5 minutes.</span>
+              </span>
+            </label>
+          </li>
 
+          <li>
+            <input class="services__input" type="radio" name="service" id="service-voiceserver" value="voiceserver" />
+            <label class="services__card services__card--voiceserver" for="service-voiceserver">
+              <span class="services__text">
+                <span class="services__name">Voiceserver</span>
+                <span class="services__price">From €1.85</span>
+              </span>
+              <span class="services__help">
+                <span class="services__tooltip">Voice server for your community with your own address, unlimited channels and no player limit.</span>
+              </span>
+            </label>
+          </li>
 
+          <li>
+            <input class="services__input" type="radio" name="service" id="service-vps" value="vps" />
+            <label class="services__card services__card--vps" for="service-vps">
+              <span class="services__text">
+                <span class="services__name">VPS</span>
+                <span class="services__price">From €5.99</span>
+              </span>
+              <span class="services__help">
+                <span class="services__tooltip">Virtual server with full root access. Install your own operating system and run whatever you need.</span>
+              </span>
+            </label>
+          </li>
 
+          <li>
+            <input class="services__input" type="radio" name="service" id="service-dedicated" value="dedicated" />
+            <label class="services__card services__card--dedicated" for="service-dedicated">
+              <span class="services__text">
+                <span class="services__name">Dedicated Server</span>
+                <span class="services__price">From €11.99</span>
+              </span>
+              <span class="services__help">
+                <span class="services__tooltip">A whole physical machine only for you. Full performance with nothing shared with other customers.</span>
+              </span>
+            </label>
+          </li>
 
+          <li>
+            <input class="services__input" type="radio" name="service" id="service-domain" value="domain" />
+            <label class="services__card services__card--domain" for="service-domain">
+              <span class="services__text">
+                <span class="services__name">Domain</span>
+                <span class="services__price">From €0.99</span>
+              </span>
+              <span class="services__help">
+                <span class="services__tooltip">Your own domain name with DNS settings you can change any time. Registration takes a few clicks.</span>
+              </span>
+            </label>
+          </li>
 
+          <li>
+            <input class="services__input" type="radio" name="service" id="service-storage" value="storage" />
+            <label class="services__card services__card--storage" for="service-storage">
+              <span class="services__text">
+                <span class="services__name">Premium Storage</span>
+                <span class="services__price">From €1.49</span>
+              </span>
+              <span class="services__help">
+                <span class="services__tooltip">Space for backups and files on fast SSD disks, reachable from anywhere without a transfer limit.</span>
+              </span>
+            </label>
+          </li>
 
+          <li>
+            <input class="services__input" type="radio" name="service" id="service-bot" value="bot" />
+            <label class="services__card services__card--bot" for="service-bot">
+              <span class="services__text">
+                <span class="services__name">Bot</span>
+                <span class="services__price">From €1.99</span>
+              </span>
+              <span class="services__help">
+                <span class="services__tooltip">Hosting for Discord bots and other scripts that need to keep running 24/7 without your computer.</span>
+              </span>
+            </label>
+          </li>
+        </ul>
 
+        <div class="products products--gameserver">
+          <h2 class="order__title">Choose your product</h2>
 
+          <ul class="products__list">
+            <li>
+              <input class="products__input" type="radio" name="product-gameserver" id="product-minecraft" checked />
+              <label class="products__row products__row--minecraft" for="product-minecraft">
+                <span>Minecraft</span>
+              </label>
+            </li>
 
+            <li>
+              <input class="products__input" type="radio" name="product-gameserver" id="product-scp" />
+              <label class="products__row products__row--scp" for="product-scp">
+                <span>SCP: Secret Laboratory</span>
+              </label>
+            </li>
 
+            <li>
+              <input class="products__input" type="radio" name="product-gameserver" id="product-fivem" />
+              <label class="products__row products__row--fivem" for="product-fivem">
+                <span>FiveM</span>
+              </label>
+            </li>
+
+            <li>
+              <input class="products__input" type="radio" name="product-gameserver" id="product-subnautica" />
+              <label class="products__row products__row--subnautica" for="product-subnautica">
+                <span>Subnautica 2 - Beacon</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="products products--voiceserver">
+          <h2 class="order__title">Choose your product</h2>
+
+          <ul class="products__list">
+            <li>
+              <input class="products__input" type="radio" name="product-voiceserver" id="product-teamspeak" checked />
+              <label class="products__row products__row--voice" for="product-teamspeak">
+                <span>TeamSpeak 3</span>
+              </label>
+            </li>
+
+            <li>
+              <input class="products__input" type="radio" name="product-voiceserver" id="product-mumble" />
+              <label class="products__row products__row--voice" for="product-mumble">
+                <span>Mumble</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="products products--vps">
+          <h2 class="order__title">Choose your product</h2>
+
+          <ul class="products__list">
+            <li>
+              <input class="products__input" type="radio" name="product-vps" id="product-vps-debian" checked />
+              <label class="products__row products__row--server-square-cloud" for="product-vps-debian">
+                <span>Debian 12</span>
+              </label>
+            </li>
+
+            <li>
+              <input class="products__input" type="radio" name="product-vps" id="product-vps-ubuntu" />
+              <label class="products__row products__row--server-square-cloud" for="product-vps-ubuntu">
+                <span>Ubuntu 24.04 LTS</span>
+              </label>
+            </li>
+
+            <li>
+              <input class="products__input" type="radio" name="product-vps" id="product-vps-windows" />
+              <label class="products__row products__row--server-square-cloud" for="product-vps-windows">
+                <span>Windows Server 2022</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="products products--dedicated">
+          <h2 class="order__title">Choose your product</h2>
+
+          <ul class="products__list">
+            <li>
+              <input class="products__input" type="radio" name="product-dedicated" id="product-dedicated-debian" checked />
+              <label class="products__row products__row--server" for="product-dedicated-debian">
+                <span>Debian 12</span>
+              </label>
+            </li>
+
+            <li>
+              <input class="products__input" type="radio" name="product-dedicated" id="product-dedicated-ubuntu" />
+              <label class="products__row products__row--server" for="product-dedicated-ubuntu">
+                <span>Ubuntu 24.04 LTS</span>
+              </label>
+            </li>
+
+            <li>
+              <input class="products__input" type="radio" name="product-dedicated" id="product-dedicated-windows" />
+              <label class="products__row products__row--server" for="product-dedicated-windows">
+                <span>Windows Server 2022</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="products products--domain">
+          <h2 class="order__title">Choose your product</h2>
+
+          <ul class="products__list">
+            <li>
+              <input class="products__input" type="radio" name="product-domain" id="product-domain-com" checked />
+              <label class="products__row products__row--domains" for="product-domain-com">
+                <span>.com</span>
+              </label>
+            </li>
+
+            <li>
+              <input class="products__input" type="radio" name="product-domain" id="product-domain-eu" />
+              <label class="products__row products__row--domains" for="product-domain-eu">
+                <span>.eu</span>
+              </label>
+            </li>
+
+            <li>
+              <input class="products__input" type="radio" name="product-domain" id="product-domain-cz" />
+              <label class="products__row products__row--domains" for="product-domain-cz">
+                <span>.cz</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="products products--bot">
+          <h2 class="order__title">Choose your product</h2>
+
+          <ul class="products__list">
+            <li>
+              <input class="products__input" type="radio" name="product-bot" id="product-bot-discord" checked />
+              <label class="products__row products__row--discord" for="product-bot-discord">
+                <span>Discord</span>
+              </label>
+            </li>
+
+            <li>
+              <input class="products__input" type="radio" name="product-bot" id="product-bot-telegram" />
+              <label class="products__row products__row--bot" for="product-bot-telegram">
+                <span>Telegram</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+
+        <h2 class="order__title">Choose the location of your server</h2>
+
+        <ul class="locations">
+          <li>
+            <input class="locations__input" type="radio" name="location" id="location-africa" checked />
+            <label class="locations__button locations__button--africa" for="location-africa">
+              <span class="locations__name">Africa</span>
+            </label>
+          </li>
+
+          <li>
+            <input class="locations__input" type="radio" name="location" id="location-europe" />
+            <label class="locations__button locations__button--europe" for="location-europe">
+              <span class="locations__name">Europe</span>
+            </label>
+          </li>
+
+          <li>
+            <input class="locations__input" type="radio" name="location" id="location-asia" />
+            <label class="locations__button locations__button--asia" for="location-asia">
+              <span class="locations__name">Asia</span>
+            </label>
+          </li>
+
+          <li>
+            <input class="locations__input" type="radio" name="location" id="location-oceania" />
+            <label class="locations__button locations__button--oceania" for="location-oceania">
+              <span class="locations__name">Oceania</span>
+            </label>
+          </li>
+
+          <li>
+            <input class="locations__input" type="radio" name="location" id="location-north-america" />
+            <label class="locations__button locations__button--northamerica" for="location-north-america">
+              <span class="locations__name">North America</span>
+            </label>
+          </li>
+
+          <li>
+            <input class="locations__input" type="radio" name="location" id="location-south-america" />
+            <label class="locations__button locations__button--southamerica" for="location-south-america">
+              <span class="locations__name">South America</span>
+            </label>
+          </li>
+        </ul>
+
+        <div class="package">
+          <h2 class="order__title">Configure your package</h2>
+
+          <div class="package__fields">
+            <div class="package__field package__field--memory">
+              <label class="package__label" for="memory">Memory</label>
+              <select class="package__select" id="memory">
+                <option value="4">4GB (+€0 / month)</option>
+                <option value="8">8GB (+€2 / month)</option>
+                <option value="12">12GB (+€4 / month)</option>
+                <option value="16">16GB (+€6 / month)</option>
+                <option value="32">32GB (+€14 / month)</option>
+              </select>
+            </div>
+
+            <div class="package__field package__field--cpu">
+              <label class="package__label" for="cpu">CPU & Host Server</label>
+              <select class="package__select" id="cpu">
+                <option value="standard">Standard (+€0 / month)</option>
+                <option value="performance">Performance (+€10 / month)</option>
+              </select>
+            </div>
+
+            <div class="package__field package__field--disk">
+              <label class="package__label" for="disk">Disk Space</label>
+              <select class="package__select" id="disk">
+                <option value="20">20GB (+€0 / month)</option>
+                <option value="30">30GB (+€1.9 / month)</option>
+                <option value="40">40GB (+€3.8 / month)</option>
+                <option value="50">50GB (+€5.7 / month)</option>
+                <option value="100">100GB (+€15.2 / month)</option>
+              </select>
+            </div>
+
+            <div class="package__field package__field--slots">
+              <label class="package__label" for="slots">Slot</label>
+              <select class="package__select" id="slots">
+                <option value="10">10 (+€0 / month)</option>
+                <option value="20">20 (+€1 / month)</option>
+                <option value="30">30 (+€2 / month)</option>
+                <option value="50">50 (+€4 / month)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="summary">
+        <h2 class="summary__title">Your configuration</h2>
+
+        <ul class="summary__list">
+          <li class="summary__row">
+            <span class="summary__key">Chosen service</span>
+            <span class="summary__value">Gameserver - SCP:SL</span>
+          </li>
+
+          <li class="summary__row">
+            <span class="summary__key">Location</span>
+            <span class="summary__value">Europe</span>
+          </li>
+
+          <li class="summary__row">
+            <span class="summary__key">Memory</span>
+            <span class="summary__value">
+              16 GB (4GB + 12GB Additional at <span class="summary__price">€0.5 / GB</span>)
+              <span class="summary__price">+ €6 / month</span>
+            </span>
+          </li>
+
+          <li class="summary__row">
+            <span class="summary__key">CPU & Host Server</span>
+            <span class="summary__value">Standard (SSD, 2.7-3.4 Ghz, DDR4 memory)</span>
+          </li>
+
+          <li class="summary__row">
+            <span class="summary__key">Disk Space</span>
+            <span class="summary__value">
+              50 GB (20GB + 30GB Additional at <span class="summary__price">€0.19 / GB</span>)
+              <span class="summary__price">+ €5.7 / month</span>
+            </span>
+          </li>
+
+          <li class="summary__row">
+            <span class="summary__key">Slot</span>
+            <span class="summary__value">
+              30 (10 + 20 Additional at <span class="summary__price">€0.1 / slot per month</span>)
+              <span class="summary__price">+ €2 / month</span>
+            </span>
+          </li>
+
+          <li class="summary__row">
+            <span class="summary__key">Total Cost</span>
+            <span class="summary__value">
+              €4.99 / month (Base price)
+              <span class="summary__price">+ €6 / month (Memory)</span>
+              <span class="summary__price">+ €5.7 / month (Disk Space)</span>
+              <span class="summary__price">+ €2 / month (Additional slots)</span>
+            </span>
+          </li>
+        </ul>
+
+        <p class="summary__total">€18.69 / month</p>
+
+        <button class="summary__button" type="button">Pay now by Card</button>
+      </aside>
+    </main>
 
     <footer class="footer">
       <div class="footer__columns">
@@ -146,12 +526,10 @@
           <h2 class="footer__title">Contact</h2>
 
           <ul class="footer__list">
-            <li class="footer__item">
-              <img class="footer__icon" src="Assets/Icons/mail.svg" />
+            <li class="footer__item footer__item--mail">
               <a class="footer__link" href="#">info@nexyros.eu</a>
             </li>
-            <li class="footer__item">
-              <img class="footer__icon" src="Assets/Icons/phone.svg" />
+            <li class="footer__item footer__item--phone">
               <a class="footer__link" href="#">+420 722 689 341</a>
             </li>
           </ul>
@@ -161,24 +539,20 @@
           <h2 class="footer__title">Socials</h2>
 
           <ul class="footer__list">
-            <li class="footer__item">
-              <img class="footer__icon" src="Assets/Icons/discord.svg" />
+            <li class="footer__item footer__item--discord">
               <a class="footer__link" href="https://discord.gg/hS87nZ"
                 >Discord</a
               >
             </li>
-            <li class="footer__item">
-              <img class="footer__icon" src="Assets/Icons/instagram.svg" />
+            <li class="footer__item footer__item--instagram">
               <a class="footer__link" href="https://instagram.com/nexyros.eu"
                 >Instagram</a
               >
             </li>
-            <li class="footer__item">
-              <img class="footer__icon" src="Assets/Icons/twitter.svg" />
+            <li class="footer__item footer__item--twitter">
               <a class="footer__link" href="https://x.com/nexyros">Twitter</a>
             </li>
-            <li class="footer__item">
-              <img class="footer__icon" src="Assets/Icons/bluesky.svg" />
+            <li class="footer__item footer__item--bluesky">
               <a class="footer__link" href="https://bsky.app/profile/nexyros.eu"
                 >Bluesky</a
               >
@@ -191,10 +565,12 @@
         <p class="footer__copyright">2026 Nexyros s.r.o.</p>
 
         <nav class="footer__nav">
-          <a class="footer__link" href="index.html">Home</a>
-          <a class="footer__link" href="order.html">Rent a server</a>
-          <a class="footer__link" href="contactsform.html">Support</a>
-          <a class="footer__link" href="index.html#faq">FAQ</a>
+          <menu class="footer__menu">
+            <li><a class="footer__link" href="index.html">Home</a></li>
+            <li><a class="footer__link" href="order.html">Rent a server</a></li>
+            <li><a class="footer__link" href="contactsform.html">Support</a></li>
+            <li><a class="footer__link" href="index.html">FAQ</a></li>
+          </menu>
         </nav>
       </div>
     </footer>
